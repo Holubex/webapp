@@ -49,6 +49,4 @@ def mouse_leave(widget, msg):
     widget.text = "The mouse left!"
 
 
-# jp.Route('/home', home)
-
 jp.justpy()
