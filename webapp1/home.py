@@ -16,6 +16,7 @@ class Home:
                 click=cls.move_drawer, drawer=drawer)
         jp.QToolbarTitle(a=toolbar,text='Instant Dictionary')
 
+
         div = jp.Div(a=layout, classes="bg-white-200 h-screen")
         jp.Div(a=div, text='This is the Home Page!', classes='text-4xl m-2')
         jp.Div(a=div, text='''

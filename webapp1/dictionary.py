@@ -11,24 +11,12 @@ class Dictionary:
         jp.Div(a=div, text='Get the definition of any English word instantly as you type.', classes='text-lg')
 
         input_div = jp.Div(a=div, classes='grid grid-cols-2')
-<<<<<<< HEAD
-        
-
-        output_div = jp.Div(a=div, classes='m-2 p-2 text-lg border-2 h-40')
-
-        input_box = jp.Input(a=input_div, placeholder='Type in a word here...', outputdiv=output_div,
-                             classes='m-2 bg-gray-100 border-2 border-gray-200 rounded w-64 focus:bg-white focus:outline-none '
-                                     'focus:border-purple-900 py-2 px-4 ')
-        input_box.on('input', cls.get_definition)
-
-=======
         input_box = jp.Input(a=input_div, placeholder='Type in a word here...',
                  classes='m-2 bg-gray-100 border-2 border-gray-200 rounded w-64 focus:bg-white focus:outline-none '
                          'focus:border-purple-900 py-2 px-4 ')
         output_div = jp.Div(a=div, classes='m-2 p-2 text-lg border-2 h-40')
         jp.Button(a=input_div, text='Get Definition', classes='border-2 text-gray-900', click=cls.get_definition,
                   outputdiv=output_div, inputbox=input_box)
->>>>>>> 10ed5b1dd460015b12d93b204b1eb09e628899ca
 
 
         print(cls, req)
@@ -37,11 +25,6 @@ class Dictionary:
 
     @staticmethod
     def get_definition(widget, msg):
-<<<<<<< HEAD
-        defined = definition.Definition(widget.value).get()
-=======
         defined = definition.Definition(widget.inputbox.value).get()
->>>>>>> 10ed5b1dd460015b12d93b204b1eb09e628899ca
         widget.outputdiv.text = (';').join(defined)
-
 
