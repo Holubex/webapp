@@ -1,7 +1,9 @@
 import justpy as jp
 from webapp1 import layout
+from webapp1 import page
 
-class Home:
+
+class Home(page.Page):
     path = '/'
 
     @classmethod
