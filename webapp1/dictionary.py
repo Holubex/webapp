@@ -1,12 +1,16 @@
 import justpy as jp
 import definition
-
+from webapp1 import layout
 class Dictionary:
     path = '/dictionary'
     @classmethod
     def serve(cls, req):
         wp = jp.QuasarPage(tailwind=True)
-        div = jp.Div(a=wp, classes="bg-blue-100 h-screen")
+
+        lay = layout.DefaultLayout(a=wp)
+        container = jp.QPageContainer(a=lay)
+
+        div = jp.Div(a=container, classes="bg-blue-100 h-screen")
         jp.Div(a=div, text='Instant english dictionary', classes='text-4xl m-2')
         jp.Div(a=div, text='Get the definition of any English word instantly as you type.', classes='text-lg')
 
@@ -16,7 +20,7 @@ class Dictionary:
 
         input_box = jp.Input(a=input_div, placeholder='Type in a word here...', outputdiv=output_div,
                  classes='m-2 bg-gray-100 border-2 border-gray-200 rounded w-64 focus:bg-white focus:outline-none '
-                         'focus:border-purple-900 py-2 px-4 ')
+                 'focus:border-purple-900 py-2 px-4 ')
         input_box.on('input', cls.get_definition)
 
         print(cls, req)
